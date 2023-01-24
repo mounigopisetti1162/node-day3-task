@@ -18,9 +18,6 @@ app.post("/students",async function(request,responce)
 {
     const data=request.body()
     const student=await client.db("test").collection('student').insertMany(data)
-
-
-
     responce.send(student)
 
 })
