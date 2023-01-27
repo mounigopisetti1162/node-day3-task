@@ -1,0 +1,15 @@
+.cardstudent{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin: 24px;
+}
+.card{
+  background-color: white;
+  width: 80px;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: rgb(0 0 0 / 24%) 1px 2px 13px;
+  margin-top: 20px;
+} 
