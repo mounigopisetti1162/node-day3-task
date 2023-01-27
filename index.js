@@ -14,7 +14,7 @@ app.use(express.json())
 app.use(cors());
 app.get('/',function(request,responce)
 {
-    responce.send("this is an student and teacher server ")
+    responce.send("this is an student and teacher server  student=/students,mentor=/mentors ")
 })
 app.post("/students",async function(request,responce)
 {
