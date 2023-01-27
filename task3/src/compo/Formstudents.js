@@ -21,10 +21,53 @@ export default function Forms1()
         setdata(intial)
         
     }
+    let value=[]
+    let count=0
+    let studentsmen=[]
+    let mentors=[]
     // const name ={context.student}
-    const {mentor}=context.student
-    // console.log({context.student})
-    
+    console.log(context.student)
+    // console.log(context.mentor)
+
+    context.student.map((stu)=>{
+        studentsmen.push(stu.mentor)
+    })
+    context.mentor.map((men,index)=>
+        {
+mentors.push(men.name)
+        })
+        
+        console.log(studentsmen)
+        console.log(mentors)
+        mentors = mentors.filter(function(item) {
+            return !studentsmen.includes(item);
+        })
+        console.log(studentsmen)
+
+
+    //     
+            console.log(mentors)
+
+    // if(stu.mentor===men.name)
+    // {
+    //     count=count+1
+    //     console.log(count)
+    // }
+    //     })
+    //     console.log(count)
+    //     if(count===0)
+    //     {
+    //         value.push(stu.mentor)
+    //     }
+        
+    // })
+    const filter=(val)=>{
+        return val.filter((item,index)=>val.indexOf(item)===index)
+    }
+    const needed=filter(value)
+    console.log()
+    console.log("helo")
+
     return(
         <>
         <form >
@@ -34,18 +77,10 @@ export default function Forms1()
 
         <TextField id="outlined-basic" select label="select" variant="outlined" type="drop-down" onChange={handel} name='mentor' value={data.mentor}
          >
-            
-
-            
-            {context.mentor.map((men,key)=>(
-             
-             
-                <MenuItem key={key} value={men.name}>
-                    {men.name}
+            {mentors.map((men,key)=>(
+                <MenuItem key={key} value={men}>
+                    {men}
                 </MenuItem>
-                
-            
-
             ))}
             
             </TextField>

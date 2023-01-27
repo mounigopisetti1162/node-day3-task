@@ -9,7 +9,7 @@ export default function Mentors()
     useEffect(()=>{
         context.getmentor()
     },[])
-
+console.log(context.mentor)
     return (
     <div className="cardstudent">
     
